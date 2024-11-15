@@ -449,12 +449,12 @@ map.addControl(Title)
 var Abstract = new ol.control.Control({
     element: (() => {
         var titleElement = document.createElement('div');
-        titleElement.className = 'top-right-abstract ol-control';
+        titleElement.className = 'bottom-left-abstract ol-control';
         titleElement.id = 'abstract';
 
         var linkElement = document.createElement('a');
 
-        if (227 > 240) {
+        if (230 > 240) {
             linkElement.setAttribute("onmouseenter", "showAbstract()");
             linkElement.setAttribute("onmouseleave", "hideAbstract()");
             linkElement.innerHTML = 'i';
@@ -468,19 +468,19 @@ var Abstract = new ol.control.Control({
             window.showAbstract = function() {
                 linkElement.classList.remove("project-abstract");
                 linkElement.classList.add("project-abstract-uncollapsed");
-                linkElement.innerHTML = '<h4>Kompensationsmaßnahmen auf dem Scharpenacken</h4><br />Klick auf die jeweiligen Flächen gibt weitere Infos zu den jeweiligen Maßnahmen (PDF, JPG)<br />Die Suche (Fernglas) erlaubt die Suche nach Maßnahmen-Nummern (z. B. 07 oder 01a).';
+                linkElement.innerHTML = '<h4>Kompensationsmaßnahmen auf dem Scharpenacken</h4><br />Klick auf die jeweiligen Flächen gibt weitere Infos zu den jeweiligen Maßnahmen (PDF, JPG)<p><br />Die Suche (Fernglas) erlaubt die Suche nach Maßnahmen-Nummern (z. B. 07 oder 01a).';
             }
 
             hideAbstract();
         } else {
             linkElement.classList.add("project-abstract-uncollapsed");
-            linkElement.innerHTML = '<h4>Kompensationsmaßnahmen auf dem Scharpenacken</h4><br />Klick auf die jeweiligen Flächen gibt weitere Infos zu den jeweiligen Maßnahmen (PDF, JPG)<br />Die Suche (Fernglas) erlaubt die Suche nach Maßnahmen-Nummern (z. B. 07 oder 01a).';
+            linkElement.innerHTML = '<h4>Kompensationsmaßnahmen auf dem Scharpenacken</h4><br />Klick auf die jeweiligen Flächen gibt weitere Infos zu den jeweiligen Maßnahmen (PDF, JPG)<p><br />Die Suche (Fernglas) erlaubt die Suche nach Maßnahmen-Nummern (z. B. 07 oder 01a).';
         }
 
         titleElement.appendChild(linkElement);
         return titleElement;
     })(),
-    target: 'top-right-container'
+    target: 'bottom-left-container'
 });
 map.addControl(Abstract);
 
