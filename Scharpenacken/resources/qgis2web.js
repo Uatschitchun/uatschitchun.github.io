@@ -436,11 +436,11 @@ var bottomRightContainerDiv = document.getElementById('bottom-right-container')
 var Title = new ol.control.Control({
     element: (() => {
         var titleElement = document.createElement('div');
-        titleElement.className = 'top-right-title ol-control';
+        titleElement.className = 'top-left-title ol-control';
         titleElement.innerHTML = '<h2 class="project-title">Scharpenacken</h2>';
         return titleElement;
     })(),
-    target: 'top-right-container'
+    target: 'top-left-container'
 });
 map.addControl(Title)
     
@@ -449,12 +449,12 @@ map.addControl(Title)
 var Abstract = new ol.control.Control({
     element: (() => {
         var titleElement = document.createElement('div');
-        titleElement.className = 'bottom-left-abstract ol-control';
+        titleElement.className = 'top-right-abstract ol-control';
         titleElement.id = 'abstract';
 
         var linkElement = document.createElement('a');
 
-        if (45 > 240) {
+        if (227 > 240) {
             linkElement.setAttribute("onmouseenter", "showAbstract()");
             linkElement.setAttribute("onmouseleave", "hideAbstract()");
             linkElement.innerHTML = 'i';
@@ -468,19 +468,19 @@ var Abstract = new ol.control.Control({
             window.showAbstract = function() {
                 linkElement.classList.remove("project-abstract");
                 linkElement.classList.add("project-abstract-uncollapsed");
-                linkElement.innerHTML = 'Kompensationsmassnahmen auf dem Scharpenacken';
+                linkElement.innerHTML = '<h4>Kompensationsmaßnahmen auf dem Scharpenacken</h4><br />Klick auf die jeweiligen Flächen gibt weitere Infos zu den jeweiligen Maßnahmen (PDF, JPG)<br />Die Suche (Fernglas) erlaubt die Suche nach Maßnahmen-Nummern (z. B. 07 oder 01a).';
             }
 
             hideAbstract();
         } else {
             linkElement.classList.add("project-abstract-uncollapsed");
-            linkElement.innerHTML = 'Kompensationsmassnahmen auf dem Scharpenacken';
+            linkElement.innerHTML = '<h4>Kompensationsmaßnahmen auf dem Scharpenacken</h4><br />Klick auf die jeweiligen Flächen gibt weitere Infos zu den jeweiligen Maßnahmen (PDF, JPG)<br />Die Suche (Fernglas) erlaubt die Suche nach Maßnahmen-Nummern (z. B. 07 oder 01a).';
         }
 
         titleElement.appendChild(linkElement);
         return titleElement;
     })(),
-    target: 'bottom-left-container'
+    target: 'top-right-container'
 });
 map.addControl(Abstract);
 
@@ -497,19 +497,20 @@ map.addControl(Abstract);
 
 //geocoder
 
-var geocoder = new Geocoder('nominatim', {
-  provider: 'osm',
-  lang: 'en-US',
-  placeholder: 'Search place or address ...',
-  limit: 5,
-  keepOpen: true,
-});
-map.addControl(geocoder);
-document.getElementsByClassName('gcd-gl-btn')[0].className += ' fa fa-search';
-
 
 //layer search
 
+var searchLayer = new SearchLayer({
+    layer: lyr_KompensationflchenScharpenackeninkMassnahmebtterPDF_27,
+    colName: 'massnahme',
+    zoom: 10,
+    collapsed: true,
+    map: map
+});
+map.addControl(searchLayer);
+document.getElementsByClassName('search-layer')[0].getElementsByTagName('button')[0].className += ' fa fa-binoculars';
+document.getElementsByClassName('search-layer-input-search')[0].placeholder = 'Search feature ...';
+    
 
 //scalebar
 
