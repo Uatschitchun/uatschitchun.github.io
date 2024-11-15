@@ -188,7 +188,7 @@ var lyr_VerffentlichteKompensationsflchen_12 = new ol.layer.Tile({
                             
                             
                           });
-              wms_layers.push([lyr_VerffentlichteKompensationsflchen_12, 0]);
+              wms_layers.push([lyr_VerffentlichteKompensationsflchen_12, 1]);
 var lyr_FlchenanGrnanlagen_13 = new ol.layer.Tile({
                             source: new ol.source.TileWMS(({
                               url: "https://maps.wuppertal.de/planung?version%3D1.1.1",
@@ -203,7 +203,7 @@ var lyr_FlchenanGrnanlagen_13 = new ol.layer.Tile({
                             
                             
                           });
-              wms_layers.push([lyr_FlchenanGrnanlagen_13, 0]);
+              wms_layers.push([lyr_FlchenanGrnanlagen_13, 1]);
 var format_FlchenimEigentumderStadtWuppertalAusschnitt_14 = new ol.format.GeoJSON();
 var features_FlchenimEigentumderStadtWuppertalAusschnitt_14 = format_FlchenimEigentumderStadtWuppertalAusschnitt_14.readFeatures(json_FlchenimEigentumderStadtWuppertalAusschnitt_14, 
             {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
@@ -428,10 +428,10 @@ var group_Wuppertal = new ol.layer.Group({
                                 layers: [lyr_FlchenimEigentumderStadtWuppertalAusschnitt_14,lyr_LebensraumtypenrundScharpenacken_15,],
                                 fold: "open",
                                 title: "Wuppertal"});
-var group_WuppertalWMSDienstelangsam = new ol.layer.Group({
+var group_WuppertalWMSDienste = new ol.layer.Group({
                                 layers: [lyr_VerffentlichteKompensationsflchen_12,lyr_FlchenanGrnanlagen_13,],
                                 fold: "open",
-                                title: "Wuppertal WMS Dienste (langsam)"});
+                                title: "Wuppertal WMS Dienste"});
 var group_Landschaftsplnerechtsverbindlich = new ol.layer.Group({
                                 layers: [lyr_LPlanWestFestsetzungskarte_2,lyr_LPlanWestEntwicklungskarte_3,lyr_LPlanOstFestsetzungskarte_4,lyr_LPlanOstEntwicklungskarte_5,lyr_LPlanNordFestsetzungskarte_6,lyr_LPlanNordEntwicklungskarte_7,lyr_LPlanGelpeFestsetzungskarte_8,lyr_LPlanGelpeEntwicklungskarte_9,lyr_LandschaftsundNaturschutz_10,lyr_Festsetzungstexte_11,],
                                 fold: "open",
@@ -442,16 +442,16 @@ var group_Basiskarten = new ol.layer.Group({
                                 title: "Basiskarten"});
 
 lyr_OSM_0.setVisible(true);lyr_Gmaps_1.setVisible(false);lyr_LPlanWestFestsetzungskarte_2.setVisible(false);lyr_LPlanWestEntwicklungskarte_3.setVisible(false);lyr_LPlanOstFestsetzungskarte_4.setVisible(false);lyr_LPlanOstEntwicklungskarte_5.setVisible(false);lyr_LPlanNordFestsetzungskarte_6.setVisible(false);lyr_LPlanNordEntwicklungskarte_7.setVisible(false);lyr_LPlanGelpeFestsetzungskarte_8.setVisible(false);lyr_LPlanGelpeEntwicklungskarte_9.setVisible(false);lyr_LandschaftsundNaturschutz_10.setVisible(false);lyr_Festsetzungstexte_11.setVisible(false);lyr_VerffentlichteKompensationsflchen_12.setVisible(false);lyr_FlchenanGrnanlagen_13.setVisible(false);lyr_FlchenimEigentumderStadtWuppertalAusschnitt_14.setVisible(false);lyr_LebensraumtypenrundScharpenacken_15.setVisible(false);lyr_Biotopkataster_16.setVisible(false);lyr_Biotoptypen_17.setVisible(false);lyr_Landschaftsschutzgebiete_18.setVisible(false);lyr_Naturschutzgebiete_19.setVisible(false);lyr_BereichefrdenSchutzderNatur_20.setVisible(false);lyr_VerbundflchenherausragendebesondereBedeutung_21.setVisible(false);lyr_3042Biotope_22.setVisible(false);lyr_FFHGebiete_23.setVisible(false);lyr_FlcheohneBPlan_24.setVisible(false);lyr_ExterneManahmenLandschaftspflegerischerFachbeitrag_25.setVisible(true);lyr_MassnahmenBPlan1115V_26.setVisible(false);lyr_KompensationflchenScharpenackeninkMassnahmebtterPDF_27.setVisible(true);
-var layersList = [group_Basiskarten,group_Landschaftsplnerechtsverbindlich,group_WuppertalWMSDienstelangsam,group_Wuppertal,group_LandschaftsinformationssystemLINFOS,group_LandschaftspflegerischerBegleitplanScharpenacken];
+var layersList = [group_Basiskarten,group_Landschaftsplnerechtsverbindlich,group_WuppertalWMSDienste,group_Wuppertal,group_LandschaftsinformationssystemLINFOS,group_LandschaftspflegerischerBegleitplanScharpenacken];
 lyr_FlchenimEigentumderStadtWuppertalAusschnitt_14.set('fieldAliases', {'fid': 'fid', 'GEM': 'GEM', 'FLUR': 'FLUR', 'FLURSTZ': 'FLURSTZ', 'FLURSTN': 'FLURSTN', });
 lyr_LebensraumtypenrundScharpenacken_15.set('fieldAliases', {'fid': 'fid', 'LOCALID': 'LOCALID', 'DOMAINOBJE': 'DOMAINOBJE', 'LRT_CODE_G': 'LRT_CODE_G', 'LINK': 'LINK', });
-lyr_KompensationflchenScharpenackeninkMassnahmebtterPDF_27.set('fieldAliases', {'id': 'id', 'name': 'Name', 'flaeche': 'flaeche', 'bezeichnun': 'Bezeichnung', 'ziel1': 'Ziel', 'ziel2': 'ziel2', 'zielbio': 'zielbio', 'massnahme': 'Massnahme', 'ur_wert': 'Ausg. Biotopwert', 'ziel_wert': 'Ziel Biotopwert', 'ur_typ': 'Ausg. Biotoptyp', 'ziel_typ': 'Ziel Biotoptyp', 'hektar': 'Fläche (ha)', 'pdf': 'vollst. Beschreibung', });
+lyr_KompensationflchenScharpenackeninkMassnahmebtterPDF_27.set('fieldAliases', {'id': 'id', 'name': 'Name', 'flaeche': 'flaeche', 'bezeichnun': 'Bezeichnung', 'ziel1': 'Ziel', 'ziel2': 'ziel2', 'zielbio': 'zielbio', 'massnahme': 'Massnahme', 'ur_wert': 'Ausg. Biotopwert', 'ziel_wert': 'Ziel Biotopwert', 'ur_typ': 'Ausg. Biotoptyp', 'ziel_typ': 'Ziel Biotoptyp', 'hektar': 'Fläche (ha)', 'pdf': 'vollst. Beschreibung', 'image': 'Beschreibung als Bild', });
 lyr_FlchenimEigentumderStadtWuppertalAusschnitt_14.set('fieldImages', {'fid': '', 'GEM': '', 'FLUR': '', 'FLURSTZ': '', 'FLURSTN': '', });
 lyr_LebensraumtypenrundScharpenacken_15.set('fieldImages', {'fid': '', 'LOCALID': '', 'DOMAINOBJE': '', 'LRT_CODE_G': '', 'LINK': '', });
-lyr_KompensationflchenScharpenackeninkMassnahmebtterPDF_27.set('fieldImages', {'id': 'Range', 'name': 'TextEdit', 'flaeche': 'TextEdit', 'bezeichnun': 'TextEdit', 'ziel1': 'TextEdit', 'ziel2': 'TextEdit', 'zielbio': 'TextEdit', 'massnahme': 'TextEdit', 'ur_wert': 'Range', 'ziel_wert': 'Range', 'ur_typ': 'TextEdit', 'ziel_typ': 'TextEdit', 'hektar': 'TextEdit', 'pdf': 'TextEdit', });
+lyr_KompensationflchenScharpenackeninkMassnahmebtterPDF_27.set('fieldImages', {'id': 'Range', 'name': 'TextEdit', 'flaeche': 'TextEdit', 'bezeichnun': 'TextEdit', 'ziel1': 'TextEdit', 'ziel2': 'TextEdit', 'zielbio': 'TextEdit', 'massnahme': 'TextEdit', 'ur_wert': 'Range', 'ziel_wert': 'Range', 'ur_typ': 'TextEdit', 'ziel_typ': 'TextEdit', 'hektar': 'TextEdit', 'pdf': 'TextEdit', 'image': 'TextEdit', });
 lyr_FlchenimEigentumderStadtWuppertalAusschnitt_14.set('fieldLabels', {'fid': 'header label - visible with data', 'GEM': 'header label - visible with data', 'FLUR': 'header label - visible with data', 'FLURSTZ': 'header label - visible with data', 'FLURSTN': 'header label - visible with data', });
 lyr_LebensraumtypenrundScharpenacken_15.set('fieldLabels', {'fid': 'header label - visible with data', 'LOCALID': 'header label - visible with data', 'DOMAINOBJE': 'header label - visible with data', 'LRT_CODE_G': 'header label - visible with data', 'LINK': 'header label - visible with data', });
-lyr_KompensationflchenScharpenackeninkMassnahmebtterPDF_27.set('fieldLabels', {'id': 'hidden field', 'name': 'header label - visible with data', 'flaeche': 'hidden field', 'bezeichnun': 'header label - visible with data', 'ziel1': 'header label - visible with data', 'ziel2': 'header label - visible with data', 'zielbio': 'hidden field', 'massnahme': 'inline label - visible with data', 'ur_wert': 'inline label - visible with data', 'ziel_wert': 'inline label - visible with data', 'ur_typ': 'inline label - visible with data', 'ziel_typ': 'inline label - visible with data', 'hektar': 'header label - always visible', 'pdf': 'header label - visible with data', });
+lyr_KompensationflchenScharpenackeninkMassnahmebtterPDF_27.set('fieldLabels', {'id': 'hidden field', 'name': 'header label - visible with data', 'flaeche': 'hidden field', 'bezeichnun': 'header label - visible with data', 'ziel1': 'header label - visible with data', 'ziel2': 'header label - visible with data', 'zielbio': 'hidden field', 'massnahme': 'inline label - visible with data', 'ur_wert': 'inline label - visible with data', 'ziel_wert': 'inline label - visible with data', 'ur_typ': 'inline label - visible with data', 'ziel_typ': 'inline label - visible with data', 'hektar': 'header label - always visible', 'pdf': 'header label - visible with data', 'image': 'header label - visible with data', });
 lyr_KompensationflchenScharpenackeninkMassnahmebtterPDF_27.on('precompose', function(evt) {
     evt.context.globalCompositeOperation = 'normal';
 });
