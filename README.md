@@ -1,2 +1,1 @@
-# Karten
-https://uatschitchun.github.io/Scharpenacken/
+# Noch nix hier
