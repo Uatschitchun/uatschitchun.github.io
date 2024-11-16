@@ -1,3 +1,5 @@
+ol.proj.proj4.register(proj4);
+//ol.proj.get("EPSG:3857").setExtent([797364.727166, 6662968.852400, 809954.708334, 6667032.852400]);
 var wms_layers = [];
 
 
@@ -451,7 +453,7 @@ lyr_LebensraumtypenrundScharpenacken_15.set('fieldImages', {'fid': '', 'LOCALID'
 lyr_KompensationflchenScharpenackeninkMassnahmebtterPDF_27.set('fieldImages', {'id': 'Range', 'name': 'TextEdit', 'flaeche': 'TextEdit', 'bezeichnun': 'TextEdit', 'ziel1': 'TextEdit', 'ziel2': 'TextEdit', 'zielbio': 'TextEdit', 'massnahme': 'TextEdit', 'ur_wert': 'Range', 'ziel_wert': 'Range', 'ur_typ': 'TextEdit', 'ziel_typ': 'TextEdit', 'hektar': 'TextEdit', 'pdf': 'TextEdit', 'image': 'TextEdit', });
 lyr_FlchenimEigentumderStadtWuppertalAusschnitt_14.set('fieldLabels', {'fid': 'header label - visible with data', 'GEM': 'header label - visible with data', 'FLUR': 'header label - visible with data', 'FLURSTZ': 'header label - visible with data', 'FLURSTN': 'header label - visible with data', });
 lyr_LebensraumtypenrundScharpenacken_15.set('fieldLabels', {'fid': 'header label - visible with data', 'LOCALID': 'header label - visible with data', 'DOMAINOBJE': 'header label - visible with data', 'LRT_CODE_G': 'header label - visible with data', 'LINK': 'header label - visible with data', });
-lyr_KompensationflchenScharpenackeninkMassnahmebtterPDF_27.set('fieldLabels', {'id': 'hidden field', 'name': 'header label - visible with data', 'flaeche': 'hidden field', 'bezeichnun': 'header label - visible with data', 'ziel1': 'header label - visible with data', 'ziel2': 'header label - visible with data', 'zielbio': 'hidden field', 'massnahme': 'inline label - visible with data', 'ur_wert': 'inline label - visible with data', 'ziel_wert': 'inline label - visible with data', 'ur_typ': 'inline label - visible with data', 'ziel_typ': 'inline label - visible with data', 'hektar': 'header label - always visible', 'pdf': 'header label - visible with data', 'image': 'header label - visible with data', });
+lyr_KompensationflchenScharpenackeninkMassnahmebtterPDF_27.set('fieldLabels', {'id': 'hidden field', 'name': 'header label - visible with data', 'flaeche': 'hidden field', 'bezeichnun': 'header label - visible with data', 'ziel1': 'header label - visible with data', 'ziel2': 'header label - visible with data', 'zielbio': 'hidden field', 'massnahme': 'inline label - visible with data', 'ur_wert': 'inline label - visible with data', 'ziel_wert': 'inline label - visible with data', 'ur_typ': 'inline label - visible with data', 'ziel_typ': 'inline label - visible with data', 'hektar': 'header label - always visible', 'pdf': 'header label - visible with data', 'image': 'no label', });
 lyr_KompensationflchenScharpenackeninkMassnahmebtterPDF_27.on('precompose', function(evt) {
     evt.context.globalCompositeOperation = 'normal';
 });
